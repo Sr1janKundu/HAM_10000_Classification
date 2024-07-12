@@ -352,7 +352,7 @@ def plot_metrics_from_files(file_paths, save_path=None):
     
     '''
     num_files = len(file_paths)
-    rows = 3  # Three rows for three types of plots
+    rows = 4  # Four rows for four types of plots
     cols = num_files  # One column per file
 
     fig, axes = plt.subplots(rows, cols, figsize=(10 * cols, 10))  # Create a grid of subplots
@@ -370,6 +370,10 @@ def plot_metrics_from_files(file_paths, save_path=None):
         train_loss = df['Training Loss']
         valid_loss = df['Validation Loss']
         valid_pAUC = df['Validation pAUC']
+        valid_acc = df['Validation Accuracy']
+        valid_prec = df['Validation Precision']
+        valid_recall = df['Validation Recall']
+        valid_f1score = df['Validation F1 Score']
 
         # Plot training loss and validation loss
         axes[0, i].plot(epochs, train_loss, label='Training Loss', marker='o')
@@ -392,6 +396,16 @@ def plot_metrics_from_files(file_paths, save_path=None):
         axes[2, i].set_xlabel('Epochs')
         axes[2, i].set_ylabel('Validation pAUC')
         axes[2, i].legend()
+
+        # Plot accuracy, precision, recall, f1-score
+        axes[3, i].plot(epochs, valid_acc, label = "Validation Accuracy", marker = 'o')
+        axes[3, i].plot(epochs, valid_prec, label = "Validation Precision", marker = 'o')
+        axes[3, i].plot(epochs, valid_recall, label = "Validation Recall", marker = 'o')
+        axes[3, i].plot(epochs, valid_f1score, label = "Validation F1 Score", marker = 'o')
+        axes[3, i].set_title(f'File: {file_path.split("/")[-1]}')
+        axes[3, i].set_xlabel('Epochs')
+        axes[3, i].set_ylabel('Validation Metrics')
+        axes[3, i].legend()
 
     plt.tight_layout()  # Adjust the layout to prevent overlap
 

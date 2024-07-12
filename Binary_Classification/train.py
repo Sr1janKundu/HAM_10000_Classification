@@ -13,7 +13,7 @@ Constants
 '''
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 EPOCHS = 50
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.0001
 MIN_EPOCH_TRAIN = 15
 PATIENCE = 5
 EPSILON = 0.0005
