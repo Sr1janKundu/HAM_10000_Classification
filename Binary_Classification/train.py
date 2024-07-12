@@ -22,7 +22,7 @@ EPSILON = 0.0005
 '''
 Paths
 '''
-ROOT_DATA_PATH = 'D:\\HAM_10000\Data\\HAM10000_images_all'
+ROOT_DATA_PATH = 'D:\\HAM_10000\\HAM_10000_Classification\\Binary_Classification\\HAM10000_metadata_binary.csv'
 METADATA_PATH = 'D:\\HAM_10000\\Data\\HAM10000_metadata_binary.csv'
 MODEL_SAVE_PATH = 'D:\\HAM_10000\\HAM_10000_Classification\\Binary_Classification\\ResNet34_HAM10000_1-1.pth'
 LOG_FILE = 'D:\\HAM_10000\\HAM_10000_Classification\\Binary_Classification\\log.csv'
